@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoraOS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+        
+        :root {
+            --accent-red: #ff3b30;
+            --accent-red-dark: #d32f2f;
+            --accent-red-light: #ff6659;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0a0a0a;
+            color: #f5f5f7;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #ff3b30, #ff8a65);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(255,59,48,0.15) 0%, rgba(10,10,10,1) 70%);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(255, 59, 48, 0.1), 0 10px 10px -5px rgba(255, 59, 48, 0.04);
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(255, 59, 48, 0.5);
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-red);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-red-dark));
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--accent-red-light), var(--accent-red));
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(255, 59, 48, 0.4);
+        }
+        
+        .terminal {
+            background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        
+        .terminal-header {
+            background: #1a1a1a;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+        
+        .terminal-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .terminal-btn.red {
+            background-color: var(--accent-red);
+        }
+        
+        .terminal-content {
+            font-family: 'Courier New', monospace;
+        }
+        
+        .command {
+            color: var(--accent-red);
+        }
+        
+        .footer-link:hover {
+            color: var(--accent-red);
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 59, 48, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 59, 48, 0);
+            }
+        }
+        
+        .download-section {
+            scroll-margin-top: 100px;
+        }
+        
+        .smooth-scroll {
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 bg-black bg-opacity-90 backdrop-blur-md px-6 h-16 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex justify-between items-center h-full">
+        <div class="h-full flex items-center">
+            <img src="soraos_wicon.png" alt="SoraOS Logo" class="h-[120px] w-auto">
+        </div>
+    </div>
+</nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center pt-20 pb-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    <span class="gradient-text">Privacy</span> meets <br>
+                    <span class="text-white">performance</span>
+                </h1>
+                <p class="text-xl text-gray-300 max-w-lg">
+                    SoraOS is the revolutionary operating system that gives you complete control over your digital life. 
+                    Experience Windows app compatibility without the bloatware or surveillance.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#download" class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center space-x-2 smooth-scroll">
+                        <span>Download Now</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </a>
+                    <a href="https://www.figma.com/design/GeAZcktLizD8PFSLcQoz7A/SoraOS-Complete-Interface--WIP-?m=auto&t=aqhRbB24W2jncAq7-1" target="_blank" class="border border-gray-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-800 transition duration-300 flex items-center space-x-2">
+                        <span>View Design in Figma</span>
+                        <i class="fab fa-figma"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-red-500 opacity-20 blur-3xl"></div>
+                <div class="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-red-500 opacity-20 blur-3xl"></div>
+                
+                <div class="relative terminal glow">
+                    <div class="terminal-header flex items-center px-4 py-3 space-x-2">
+                        <div class="terminal-btn bg-gray-500"></div>
+                        <div class="terminal-btn bg-gray-500"></div>
+                        <div class="terminal-btn red"></div>
+                    </div>
+                    <div class="terminal-content p-6 text-sm">
+                        <p class="text-green-400">user@soraos:~$ <span class="text-white">neofetch</span></p>
+                        <div class="grid grid-cols-3 gap-4 mt-4">
+                            <div class="col-span-1">
+                                <img src="soraos.png" alt="SoraOS" class="w-24 h-24 mx-auto rounded-full">
+                            </div>
+                            <div class="col-span-2">
+                                <p class="text-red-400 font-mono">OS: SoraOS</p>
+                                <p class="text-gray-400 font-mono">Kernel: 6.5.10-generic</p>
+                                <p class="text-gray-400 font-mono">Uptime: 2 days, 4 hours</p>
+                                <p class="text-gray-400 font-mono">Shell: zsh 5.8</p>
+                                <p class="text-gray-400 font-mono">CPU: AMD Ryzen 9 5900X (24) @ 3.700GHz</p>
+                                <p class="text-gray-400 font-mono">Memory: 16GB / 32GB</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-green-400">user@soraos:~$ <span class="command">run photoshop.exe</span></p>
+                        <p class="text-gray-400">Running Adobe Photoshop (Windows)</p>
+                        <p class="text-green-400">user@soraos:~$ <span class="text-white blink">_</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+            <a href="#features" class="text-red-500 text-2xl smooth-scroll">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Why <span class="gradient-text">SoraOS</span>?</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Privacy, performance, and compatibility in mind.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-gray-900 rounded-xl p-8 border border-gray-800 transition duration-500 hover:border-red-500">
+                    <div class="w-16 h-16 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mb-6">
+                        <i class="fas fa-user-shield text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Privacy First</h3>
+                    <p class="text-gray-400">
+                        No telemetry, no tracking, no backdoors. Your data belongs to you and only you.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-gray-900 rounded-xl p-8 border border-gray-800 transition duration-500 hover:border-red-500">
+                    <div class="w-16 h-16 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mb-6">
+                        <i class="fas fa-tachometer-alt text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Blazing Fast</h3>
+                    <p class="text-gray-400">
+                        Optimized kernel and minimal background processes ensure maximum performance.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-gray-900 rounded-xl p-8 border border-gray-800 transition duration-500 hover:border-red-500">
+                    <div class="w-16 h-16 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mb-6">
+                        <i class="fab fa-windows text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Windows App Support</h3>
+                    <p class="text-gray-400">
+                        Run your favorite Windows applications seamlessly with our advanced compatibility layer.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-gray-900 rounded-xl p-8 border border-gray-800 transition duration-500 hover:border-red-500">
+                    <div class="w-16 h-16 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mb-6">
+                        <i class="fas fa-box-open text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">No Bloatware</h3>
+                    <p class="text-gray-400">
+                        Only essential apps pre-installed. You decide what to add, nothing forced upon you.
+                    </p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card bg-gray-900 rounded-xl p-8 border border-gray-800 transition duration-500 hover:border-red-500">
+                    <div class="w-16 h-16 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mb-6">
+                        <i class="fas fa-lock-open text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Open Source</h3>
+                    <p class="text-gray-400">
+                        Fully transparent codebase. Anyone can audit, contribute, or create their own version.
+                    </p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card bg-gray-900 rounded-xl p-8 border border-gray-800 transition duration-500 hover:border-red-500">
+                    <div class="w-16 h-16 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-red-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Built-in Security</h3>
+                    <p class="text-gray-400">
+                        Advanced security features out of the box, including sandboxing and permission controls.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download Section -->
+    <section id="download" class="download-section py-20 px-6 bg-black">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8">Download <span class="gradient-text">SoraOS</span></h2>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
+                Choose the version that matches your hardware. All downloads include full documentation.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-red-500 transition duration-300">
+                    <div class="w-20 h-20 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-microchip text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">64-bit</h3>
+                    <p class="text-gray-400 mb-6">For modern x86-64 systems</p>
+                    <button onclick="alert('SoraOS is still in development')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full">
+                        Download (2.4GB)
+                    </button>
+                    <p class="text-sm text-gray-500 mt-3">SHA256: 4e3a...f2c1</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-red-500 transition duration-300">
+                    <div class="w-20 h-20 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-desktop text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">32-bit</h3>
+                    <p class="text-gray-400 mb-6">For legacy x86 systems</p>
+                    <button onclick="alert('SoraOS is still in development')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full">
+                        Download (1.8GB)
+                    </button>
+                    <p class="text-sm text-gray-500 mt-3">SHA256: 8b2d...e7f3</p>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-8 border border-gray-800 hover:border-red-500 transition duration-300">
+                    <div class="w-20 h-20 rounded-xl bg-red-900 bg-opacity-30 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-red-500 text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">ARM</h3>
+                    <p class="text-gray-400 mb-6">For ARM-based devices</p>
+                    <button onclick="alert('SoraOS is still in development')" class="btn-primary text-white px-6 py-3 rounded-full font-semibold w-full">
+                        Download (2.1GB)
+                    </button>
+                    <p class="text-sm text-gray-500 mt-3">SHA256: 5f1a...d9b4</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6">Installation Guide</h3>
+                <div class="bg-gray-900 rounded-xl p-6 text-left">
+                    <div class="flex items-start space-x-4 mb-4">
+                        <div class="bg-red-900 bg-opacity-30 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                            <span class="text-red-500 font-bold">1</span>
+                        </div>
+                        <p class="text-gray-300">Download the appropriate ISO for your system</p>
+                    </div>
+                    <div class="flex items-start space-x-4 mb-4">
+                        <div class="bg-red-900 bg-opacity-30 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                            <span class="text-red-500 font-bold">2</span>
+                        </div>
+                        <p class="text-gray-300">Verify the checksum matches the one provided above</p>
+                    </div>
+                    <div class="flex items-start space-x-4 mb-4">
+                        <div class="bg-red-900 bg-opacity-30 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                            <span class="text-red-500 font-bold">3</span>
+                        </div>
+                        <p class="text-gray-300">Create a bootable USB using tools like BalenaEtcher or Rufus</p>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="bg-red-900 bg-opacity-30 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0">
+                            <span class="text-red-500 font-bold">4</span>
+                        </div>
+                        <p class="text-gray-300">Boot from USB and follow the installation wizard</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-10 px-6 bg-black text-center border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-center space-x-8 mb-6">
+                <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300">
+                    <i class="fab fa-discord text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-red-500 transition duration-300">
+                    <i class="fab fa-telegram text-xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-400">Made by unkn1wn</p>
+            <p class="text-gray-600 text-sm mt-2">SoraOS is an open-source project licensed under the MIT License.</p>
+            <p class="text-gray-600 text-sm mt-2">Windows is a registered trademark of Microsoft Corporation. Figma is a registered trademark of Figma, Inc. All trademarks are property of thei            r respective owners.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add pulse animation to download buttons when scrolled to download section
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const buttons = document.querySelectorAll('#download button');
+                    buttons.forEach(button => {
+                        button.classList.add('pulse');
+                    });
+                }
+            });
+        }, {threshold: 0.1});
+        
+        observer.observe(document.querySelector('#download'));
+    </script>
+</body>
+</html>
